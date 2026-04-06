@@ -1,0 +1,31 @@
+A computer is a programmable electronic device that processes data using hardware and software together.
+Core Components:
+ComponentRoleCPU (Processor)Executes instructions (the brain)
+RAMTemporary fast memory while working
+Storage (HDD/SSD)Permanent memory (files, OS, apps)
+MotherboardConnects all components together
+GPUHandles graphics and display
+OS (Windows/macOS/Linux)Software that manages everything
+
+How it works:
+Programs are written in code → compiled into binary (0s and 1s)
+The CPU fetches, decodes, and executes instructions in a cycle called the fetch-decode-execute cycle
+Data moves between RAM ↔ CPU ↔ Storage constantly
+The Operating System manages resources, processes, and user interaction                 
+
+CPU cache is a small, high-speed memory located on or very close to the processor core, designed to store copies of frequently used data from main memory (RAM) to significantly reduce access latency.  By acting as a high-speed buffer, it allows the CPU to retrieve instructions and data in nanoseconds rather than the tens or hundreds of nanoseconds required by standard RAM. 
+
+The cache operates on the principle of locality of reference, utilizing a hierarchical structure of levels (L1, L2, and often L3) where each level is progressively larger but slightly slower:
+
+L1 Cache: The fastest and smallest memory (typically 2KB to 64KB), embedded directly into each CPU core and often split into instruction (L1i) and data (L1d) caches. 
+L2 Cache: A larger, slightly slower layer that may be dedicated to a single core or shared between a few cores, serving as a backup when L1 data is missing. 
+L3 Cache: The largest and slowest of the on-die levels, generally shared among all CPU cores to provide a common repository for frequently accessed data. 
+When the CPU needs data, it first checks the cache; if the data is found, it is a cache hit allowing for immediate processing, whereas a cache miss forces the processor to fetch the data from the slower main memory, temporarily stalling performance.  This architecture is essential because modern CPUs operate at speeds billions of cycles per second, far outpacing the speed of DRAM, making the cache the only reason modern processors can function efficiently without constantly waiting for data. 
+
+Imagine you're a chef preparing a recipe. Your CPU needs ingredients (data) to cook (process). 
+
+L1 Cache (Spices on the Counter): You keep the salt, pepper, and oil you're using right now on the counter next to the stove. This is your L1 cache (e.g., 64 KB).  It's the fastest to access (1-3 ns), but there's only space for a few items. If the salt is there, it's a cache hit—you grab it instantly. 
+L2 Cache (Spice Rack): If the paprika isn't on the counter (L1 miss), you reach for your dedicated spice rack (L2 cache, e.g., 512 KB). It's slightly farther and takes a bit longer (5-10 ns), but still much faster than walking to the pantry. When found, the paprika is copied to the counter (L1) for next time. 
+L3 Cache (Walk-in Pantry): If the specialty saffron isn't in the rack (L2 miss), you go to the shared pantry (L3 cache, e.g., 32 MB) used by all chefs (cores). It's larger but slower (20-40 ns). If found, it's brought back to the rack and counter. 
+Main Memory (Supermarket): If the saffron isn't in the pantry (L3 miss), you have to send someone to the supermarket (RAM). This takes a long time (100+ ns), causing a significant delay in cooking. 
+Performance Impact: A 1% drop in L1 hit rate (e.g., from 99% to 98%) can slow the CPU by 10% because that one extra trip to the slower L2 or RAM adds significant delay. This is why larger, smarter caches are crucial for high-performance tasks like gaming. 

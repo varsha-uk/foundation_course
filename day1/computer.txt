@@ -13,14 +13,28 @@ The CPU fetches, decodes, and executes instructions in a cycle called the fetch-
 Data moves between RAM ↔ CPU ↔ Storage constantly
 The Operating System manages resources, processes, and user interaction                 
 
-CPU cache is a small, high-speed memory located on or very close to the processor core, designed to store copies of frequently used data from main memory (RAM) to significantly reduce access latency.  By acting as a high-speed buffer, it allows the CPU to retrieve instructions and data in nanoseconds rather than the tens or hundreds of nanoseconds required by standard RAM. 
+Cache
 
-The cache operates on the principle of locality of reference, utilizing a hierarchical structure of levels (L1, L2, and often L3) where each level is progressively larger but slightly slower:
+CPU cache is a small, high-speed memory located on or very close to the processor core, 
+designed to store copies of frequently used data from main memory (RAM) to significantly reduce access latency.  
+By acting as a high-speed buffer, it allows the CPU to retrieve instructions and data in nanoseconds rather than the tens or 
+hundreds of nanoseconds required by standard RAM. 
 
-L1 Cache: The fastest and smallest memory (typically 2KB to 64KB), embedded directly into each CPU core and often split into instruction (L1i) and data (L1d) caches. 
-L2 Cache: A larger, slightly slower layer that may be dedicated to a single core or shared between a few cores, serving as a backup when L1 data is missing. 
+The cache
+
+The cache operates on the principle of locality of reference, utilizing a hierarchical structure of levels 
+(L1, L2, and often L3) where each level is progressively larger but slightly slower:
+
+L1 Cache: The fastest and smallest memory (typically 2KB to 64KB),
+embedded directly into each CPU core and often split into instruction (L1i) and data (L1d) caches. 
+
+L2 Cache: A larger, slightly slower layer that may be dedicated to a single core or shared between a 
+few cores, serving as a backup when L1 data is missing. 
+
 L3 Cache: The largest and slowest of the on-die levels, generally shared among all CPU cores to provide a common repository for frequently accessed data. 
 When the CPU needs data, it first checks the cache; if the data is found, it is a cache hit allowing for immediate processing, whereas a cache miss forces the processor to fetch the data from the slower main memory, temporarily stalling performance.  This architecture is essential because modern CPUs operate at speeds billions of cycles per second, far outpacing the speed of DRAM, making the cache the only reason modern processors can function efficiently without constantly waiting for data. 
+
+Example for cache:
 
 Imagine you're a chef preparing a recipe. Your CPU needs ingredients (data) to cook (process). 
 
